@@ -10,6 +10,10 @@ function search(){
     input = input.substring(input.length-1);
     console.log(input);
 
+    if(input.length = 0){
+        document.getElementById('result').innerHTML = "Result"
+    }
+
     if(common.includes(input)) {
         document.getElementById('result').innerHTML = 'Common';
     }
