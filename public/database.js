@@ -4,8 +4,10 @@ rare = document.getElementById('rare').innerHTML;
 epic = document.getElementById('epic').innerHTML;
 legendary = document.getElementById('legendary').innerHTML;
 
+
 function search(){
     input = document.getElementById('input').value;
+    input = input.substring(input.length-1);
     console.log(input);
 
     if(common.includes(input)) {
@@ -29,7 +31,7 @@ function search(){
     }
 
     else{
-        document.getElementById('input').value = "Emoji not found"
+        document.getElementById('result').innerHTML = "Emoji not found"
     }
     
 
