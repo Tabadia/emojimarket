@@ -1,5 +1,5 @@
 {
-  "name": "thalenabadia",
+  "name": "emojimarket",
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
@@ -13,6 +13,7 @@
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
+    "tailwindcss-border-gradient-radius": "^3.0.1",
     "vanillajs-browser-helpers": "^2.0.2"
   }
 }

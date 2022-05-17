@@ -92,6 +92,9 @@ module.exports = {
       'rtxt': '#1351A1',
       'etxt': '#2D1A7A',
       'ltxt': '#AC5900',
+      'trophyBG': '#161516',
+      'trophyLight': '#DAD288',
+      'trophyDark': '#8C5E03',
     }),
     columns: {
       auto: 'auto',

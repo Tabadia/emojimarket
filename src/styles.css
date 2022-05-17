@@ -6,3 +6,22 @@
     font-family: "basic";
     src: url("../public/basic.ttf");
   }
+
+.border-gradient-trophy {
+  background: linear-gradient(to right, #161516, #161516),
+    linear-gradient(to bottom right, #DAD288, #8C5E03);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+@layer components {
+  .trophy {
+    @apply block rounded-xl shadow-lg bg-trophyBG border-gradient-trophy border-transparent border-solid border-4 rounded-xl md:w-1/6 md:mx-0 w-5/12 mt-2 py-10;
+  }
+  .trophyTitle {
+    @apply text-2xl md:text-4xl;
+  }
+  .trophyTxt {
+    @apply text-base md:text-2xl px-2;
+  }
+}

@@ -27,6 +27,10 @@ function search(){
     else if(legendary.includes(input)) {
         document.getElementById('result').innerHTML = 'Legendary';
     }
+
+    else{
+        document.getElementById('input').value = "Emoji not found"
+    }
     
 
 }
