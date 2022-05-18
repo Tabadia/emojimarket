@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    ".\\public\\**\\**"
+    ".\\dist\\**\\**"
   ],
   darkMode: 'media', // or 'class'
   theme: {
