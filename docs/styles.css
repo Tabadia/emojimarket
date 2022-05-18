@@ -1278,7 +1278,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 @font-face {
   font-family: "basic";
 
-  src: url("../docs/basic.ttf");
+  src: url("../basic.ttf");
 }
 
 .border-gradient-trophy {
