@@ -8,7 +8,7 @@ legendary = document.getElementById('legendary').innerHTML;
 function search(){
     input = document.getElementById('input').value;
     input = input.substring(input.length - 1);
-    input = " " + input + " ";
+    input = input + " ";
     console.log(input);
 
     if(input.length = 0){
