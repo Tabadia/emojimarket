@@ -7,14 +7,15 @@ legendary = document.getElementById('legendary').innerHTML;
 
 function search(){
     input = document.getElementById('input').value;
-    input = input.substring(input.length-1);
+    input = input.substring(input.length - 1);
+    input = " " + input + " ";
     console.log(input);
 
     if(input.length = 0){
         document.getElementById('result').innerHTML = "Result"
     }
 
-    if(common.includes(input)) {
+    else if(common.includes(input)) {
         document.getElementById('result').innerHTML = 'Common';
     }
 
