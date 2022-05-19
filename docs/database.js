@@ -4,21 +4,32 @@ rare = document.getElementById('rare').innerHTML;
 epic = document.getElementById('epic').innerHTML;
 legendary = document.getElementById('legendary').innerHTML;
 
-const regexExp = /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi;
+function removeSpaces(string) {
+    return string.split(' ').join('');
+   }
 
-function search(){
+function search() {
     input = document.getElementById('input').value;
-    input = input.substring(input.length - 1);
-    console.log(regexExp.test(input))
-    input = input + " ";
-    console.log(input);
-
-    if(input.length <= 0){
-        document.getElementById('result').innerHTML = "Result"
+    document.getElementById('input').value = document.getElementById('input').value.replaceAll(" ", "");
+    if (input.length < 2) {
+        document.getElementById('result').innerHTML = "Rarity"
     }
+    else if (input.length = 2){
+        document.getElementById('input').value = document.getElementById('input').value.substring(input.length-2);
+        input = document.getElementById('input').value;
+    }
+    else if (input.length >= 3) {
+        document.getElementById('input').value = document.getElementById('input').value.substring(input.length-3);
+        input = document.getElementById('input').value;
+    }
+    console.log(input);
+    input = input + " ";
+    document.getElementById('result').innerHTML = "Rarity"
+    console.log(input.length);
 
-    else if(legendary.includes(input)) {
-        document.getElementById('result').innerHTML = 'Legendary';
+    if (legendary.includes(input)) {
+        if (input.length > 1)
+            document.getElementById('result').innerHTML = 'Legendary';
     }
 
     else if(epic.includes(input)) {
