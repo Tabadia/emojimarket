@@ -13,6 +13,7 @@
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
+    "emoji-unicode": "^2.0.1",
     "tailwindcss-border-gradient-radius": "^3.0.1",
     "vanillajs-browser-helpers": "^2.0.2"
   }

@@ -4,11 +4,12 @@ rare = document.getElementById('rare').innerHTML;
 epic = document.getElementById('epic').innerHTML;
 legendary = document.getElementById('legendary').innerHTML;
 
+const regexExp = /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi;
 
 function search(){
     input = document.getElementById('input').value;
     input = input.substring(input.length - 1);
-    document.getElementById('input').value = input;
+    console.log(regexExp.test(input))
     input = input + " ";
     console.log(input);
 
@@ -35,7 +36,6 @@ function search(){
     else if(common.includes(input)) {
         document.getElementById('result').innerHTML = 'Common';
     }
-    
 
     else{
         document.getElementById('result').innerHTML = "Emoji not found"
