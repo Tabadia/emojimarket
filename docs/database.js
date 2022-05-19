@@ -1,6 +1,6 @@
-const splitter = new jQuery.getScript("grapheme.js", function () {
-    GraphemeSplitter();
-});
+import { GraphemeSplitter } from "./grapheme.js";
+splitter = GraphemeSplitter();
+
 common = document.getElementById('common').innerHTML;
 uncommon = document.getElementById('uncommon').innerHTML;
 rare = document.getElementById('rare').innerHTML;
@@ -18,7 +18,7 @@ function search() {
     if (splitter.countGraphemes(input) < 1) {
         document.getElementById('result').innerHTML = "Rarity"
     }
-    else if (splitter.countGraphemes(input) = 1){
+    else if (splitter.countGraphemes(input) == 1){
         document.getElementById('input').value = document.getElementById('input').value.substring(input.length-2);
         input = document.getElementById('input').value;
     }
