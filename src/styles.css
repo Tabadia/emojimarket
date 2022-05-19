@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind preflight;
 
 @font-face {
     font-family: "basic";
-    src: url("../public/basic.ttf");
+    src: url("../basic.ttf");
   }
 
 .border-gradient-trophy {
