@@ -13,6 +13,8 @@ function removeSpaces(string) {
 
 function search() {
     input = document.getElementById('input').value;
+    graphemes = splitter.splitGraphemes(input)
+    console.log(graphemes)
     document.getElementById('input').value = document.getElementById('input').value.replaceAll(" ", "");
     console.log(splitter.countGraphemes(input));
     if (splitter.countGraphemes(input) < 1) {
