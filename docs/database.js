@@ -1,4 +1,3 @@
-//import { GraphemeSplitter } from "./grapheme.js";
 splitter = GraphemeSplitter();
 
 common = document.getElementById('common').innerHTML;
