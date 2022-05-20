@@ -1,4 +1,4 @@
-import { GraphemeSplitter } from "./grapheme.js";
+//import { GraphemeSplitter } from "./grapheme.js";
 splitter = GraphemeSplitter();
 
 common = document.getElementById('common').innerHTML;
@@ -12,26 +12,23 @@ function removeSpaces(string) {
    }
 
 function search() {
-    input = document.getElementById('input').value;
-    graphemes = splitter.splitGraphemes(input)
-    console.log(graphemes)
-    document.getElementById('input').value = document.getElementById('input').value.replaceAll(" ", "");
-    console.log(splitter.countGraphemes(input));
+    input = document.getElementById('input').value.replaceAll(" ", "")
+    console.log(input)
+    grapheme = splitter.splitGraphemes(input)[splitter.splitGraphemes(input).length - 1]
+    console.log(grapheme)
+    emojiLength = grapheme.length
+    console.log(emojiLength)
     if (splitter.countGraphemes(input) < 1) {
         document.getElementById('result').innerHTML = "Rarity"
     }
-    else if (splitter.countGraphemes(input) == 1){
-        document.getElementById('input').value = document.getElementById('input').value.substring(input.length-2);
+    else {
+        document.getElementById('input').value = document.getElementById('input').value.substring(input.length-emojiLength);
         input = document.getElementById('input').value;
     }
-    else if (input.length >= 3) {
-        document.getElementById('input').value = document.getElementById('input').value.substring(input.length-3);
-        input = document.getElementById('input').value;
-    }
-    console.log(input);
+    //console.log(input);
     input = input + " ";
     document.getElementById('result').innerHTML = "Rarity"
-    console.log(input.length);
+    //console.log(input.length);
 
     if (legendary.includes(input)) {
         if (input.length > 1)
