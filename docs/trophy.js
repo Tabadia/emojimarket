@@ -14,7 +14,6 @@ function search(){
                 trophyClass.remove("hidden");
             }
             count++;
-            console.log(trophyTitle);
         }
         else{
             trophyClass.add("hidden");
