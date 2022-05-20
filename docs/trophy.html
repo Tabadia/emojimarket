@@ -28,6 +28,15 @@
     
     <main>
       <h1 class="text-center text-4xl mt-10 mb-4">Trophies 🏆</h1>
+
+      <div class="flex justify-center">
+        <div class="mb-3 xl:w-96">
+          <div class="input-group relative flex flex-wrap items-stretch w-full">
+            <input type="search" oninput="search()" id="input" class="form-control relative flex-auto min-w-0 block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+          </div>
+        </div>
+      </div> 
+      
       <div class="flex flex-wrap justify-center md:gap-10 gap-4 text-center break-words">
         <div class="trophy">
           <h1 class="trophyTitle">Profile</h1>
@@ -257,7 +266,7 @@
           <h1 class="trophyTitle">4 of a Kind</h1>
           <h1 class="trophyTxt">Acquire 4 of the same emoji</h1>
         </div>
-        <div class="trophy">@
+        <div class="trophy">
           <h1 class="trophyTitle">5 of a Kind</h1>
           <h1 class="trophyTxt">Acquire 5 of the same emoji</h1>
         </div>
@@ -619,5 +628,10 @@
     </main>
     
 
+    <footer class="h-10 mt-10">
+      <h1 class="text-center inset-x-0 bottom-0 sm:w-full w-2/3 mt-2">
+        Not Affiliated with EmojiSwap - Created by thalen, leaf, and hauntyy <br>Version 0.4
+      </h1>
+    </footer>
 </body>
 </html>
