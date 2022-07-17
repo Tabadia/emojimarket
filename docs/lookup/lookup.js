@@ -19,6 +19,9 @@ function loadJSON(path, success, error)
 }
 
 function load(d){
+    document.getElementById("current").innerHTML = "";
+    document.getElementById("collection").innerHTML = "";
+    document.getElementById('error').innerHTML = "";
     userFound = true
     var count = 0
     input = "@thalen"
@@ -30,6 +33,7 @@ function load(d){
             if(value['rough users'].includes(input) && count < 5){
                 document.getElementById("current").innerHTML += key;
                 count++;
+                console.log(count)
             }
             if(value['associated users'].includes(input)){
                 document.getElementById("collection").innerHTML += key;
@@ -40,8 +44,11 @@ function load(d){
             userFound = false
         }
         if (userFound){
-            input = input.replaceAll("@", "");
-            document.getElementById('error').innerHTML = "Doesn't look right? Go to #botcommands in the discord and type !lookup " + input;
+            if(count > 5 || count < 5) {
+                input = input.replaceAll("@", "");
+                document.getElementById('error').innerHTML = "Doesn't look right? Go to #botcommands in the discord and type !lookup " + input;
+            }
+            
         }
         
     }
