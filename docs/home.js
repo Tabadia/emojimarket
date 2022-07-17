@@ -31,7 +31,7 @@ function run(d) {
             minKey = key
         }
     }
-    document.getElementById("rarest").innerHTML = minKey + "<br>" + (min-1) + " held"
+    document.getElementById("rarest").innerHTML = minKey + "<br>" + (min) + " held"
 
     let max = 0
     let maxKey;
