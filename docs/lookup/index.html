@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EmojiMarket - Demand</title>
-        <link rel="stylesheet" href="../styles.css">      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <title>EmojiMarket - Lookup</title>
+        <link rel="stylesheet" href="../styles.css">
         <link rel="icon" type="image/png" href="../img/emojimarket.png"/>
-        <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E2KCHD451"></script>
         <script>
@@ -22,7 +20,7 @@
 <body class="bg-bg text-txt font-basic pb-10">
     <nav>
         <header class="text-txt body-font border-b-2">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <div class="container sm:mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a class="flex title-font font-medium items-center text-txt mb-4 md:mb-0">
                   <a href="../" class="hover:text-txt hover:underline">
                     <span class="ml-3 text-xl"><img src="../img/emojimarketnobg.png" class="w-5 float-left pt-1">EmojiMarket</span>
@@ -36,37 +34,43 @@
                 </nav>
             </div>
         </header>
-      </nav>
-    
-    <main>
-      <h1 class="text-center text-4xl mt-8 mb-4">Demand 📈</h1>
+    </nav>
+        
+    <main class="mb-auto">
+        <h1 class="text-center text-4xl mt-8 mb-4">User Lookup 👀</h1>
         <div class="flex justify-center sm:mx-0 mx-5">
           <div class="block rounded-lg shadow-lg bg-accent sm:w-1/2 w-full text-center mt-2 py-5">
               <div class="py-6">
-                <h5 class="text-txt text-2xl font-medium mb-2">Trade Frequency</h5>
-                <canvas id="monthChart" class="mx-auto my-0"></canvas>
-
-                <div class="flex justify-center">
-                  <input type="search" oninput="search()" id="input" class="form-control relative flex-auto min-w-0 block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 mx-2 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search an emoji..." aria-label="Search" aria-describedby="button-addon2">
+                <div class="flex justify-center mb-2 mx-2">
+                  <input type="search" id="input" class="form-control relative sm:w-1/2 w-full overflow-hidden px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mr-1 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search a user..." aria-label="Search" aria-describedby="button-addon2">
+                  <button class="button" onclick="search()">Search</button>
                 </div>
+                <span class="text-xl">
+                  <div class="font-bold my-2">
+                    User: <span id="user"></span>
+                  </div>
+                  <span class="font-bold">Current Emojis: </span>
+                  <br>
+                  <span id="current" class="text-lg">
+
+                  </span>
+                  <h1 class="text-sm" id="error"></h1>
+                  <br>
+                  <span class="font-bold">Collection Emojis:</span>
+                  <br>
+                  <span id="collection" class="text-sm">
+
+                  </span>
+                  <br>
+                </span>
+                
               </div>
             </div>
         </div>
 
 
-
-        <div class="flex justify-center sm:mx-0 mx-5">
-          <div class="block rounded-lg shadow-lg bg-accent sm:w-1/2 w-full text-center mt-2 py-5">
-            <div class="py-6">
-              <h5 class="text-txt text-2xl font-medium mb-2">Rarity Population</h5>          
-              <canvas id="pieChart" class="mx-auto my-0"></canvas>
-              <span>Total emojis in circulation: </span> <span id="total"></span>
-            </div>
-          </div>
-        </div>
-      
     </main>
-    
+
     <footer class="h-10 mt-10">
       <h1 class="text-center mt-10 mb-4 sm:w-full sm:mx-0 mx-10 mt-2">
         Not Affiliated with EmojiSwap - Created by Thalen and Cheesy Brik with help from owcs, leaf, and hauntyy <br>Notice any bugs? Dm floober#5201
@@ -74,6 +78,5 @@
     </footer>
 
 </body>
-<script src="grapheme.js"></script>
-<script src="demand.js"></script>
+<script src="lookup.js"></script>
 </html>

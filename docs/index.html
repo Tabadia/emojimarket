@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmojiMarket</title>
+    <title>EmojiMarket - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="img/slot-machine.png"/>
+    <link rel="icon" type="image/png" href="img/emojimarket.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/emojimarket.png"/>
+    <meta property="og:title" content="EmojiMarket" data-rh="true"/>
+    <meta property="og:description" content="Analyze the EmojiSwap market" data-rh="true"/>
+    <meta property="og:image" content="https://i.ibb.co/5WsX74V/emojimarket.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E2KCHD451"></script>
     <script>
@@ -22,57 +26,105 @@
     <header class="text-txt body-font border-b-2">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-txt mb-4 md:mb-0">
-              <a href="./">
-                <span class="ml-3 text-xl"><img src="img/slot-machine.png" class="w-5 float-left pt-1">EmojiMarket</span>
+              <a href="./" class="hover:text-txt hover:underline">
+                <span class="ml-3 text-xl"><img src="img/emojimarketnobg.png" class="w-5 float-left pt-1">EmojiMarket</span>
               </a>
             </a>
             <nav class="md:ml-auto flex text-base justify-center">
-              <a class="mr-5 hover:text-txt hover:underline" href="./demand">📈Demand</a>
-              <a class="mr-5 hover:text-txt hover:underline" href="./database">📚Database</a>
-              <a class="hover:text-txt hover:underline" href="./trophy">🏆Trophies</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="./demand">📈Demand</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="./database">📚Database</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="./lookup">👀Lookup</a>
+              <a class="hover:text-txt hover:underline sm:text-base text-sm" href="./trophy">🏆Trophies</a>
             </nav>
         </div>
     </header>
   </nav>
     
     <main class="mb-auto">
-      <h1 class="text-center text-4xl mt-10 mb-4">Welcome 👋</h1>
-      <h1 class="text-center text-2xl mt-5 sm:w-1/2 w-full mx-auto py-2">This site is still a work in progress and it will take a while before the important data needed for the rest of the site is available. <br>Dm me at <span class="font-bold">floober#5201</span> on discord if you have any bug reports or suggestions. <br>The completed pages are <a class="hover:text-txt underline" href="./database">Database</a> and <a class="hover:text-txt underline" href="./trophy">Trophies</a>!
-      </h1>
-      <div class="flex justify-center hidden">
-          <div class="block rounded-lg shadow-lg bg-accent sm:w-1/2 sm:mx-0 mx-10 w-full text-center mt-2 py-10">
-            <div class="p-6">
-              <h5 class="text-txt text-2xl font-medium mb-2">Most Popular</h5>
-              <p class="text-base mb-4 text-5xl">
-                🅿️
+      <h1 class="text-center text-4xl mt-8 mb-4">Dashboard 👋</h1>
+      <!--<h1 class="text-center text-2xl mt-5 sm:w-1/2 w-full mx-auto py-2">This site is still a work in progress and it will take a while before the important data needed for the rest of the site is available. <br>Dm me at <span class="font-bold">floober#5201</span> on discord if you have any bug reports or suggestions. <br>The completed pages are <a class="hover:text-txt underline" href="./database">Database</a> and <a class="hover:text-txt underline" href="./trophy">Trophies</a>!
+      </h1>-->
+      <h1 class="text-center text-xs mx-5">Note: The database currently updates hourly. Name changes do not transfer over emojis in the database, and the ledger used to not report what was discarded in a spin, so some data will have errors.</h1>
+
+      <div class="flex flex-wrap -mx-3 overflow-hidden justify-center gap-3">
+
+        <div class="flex justify-center w-2/5">
+          <div class="block rounded-lg shadow-lg bg-accent w-full text-center sm:py-10 py-0">
+            <div class="px-6 py-2">
+              <h5 class="text-txt text-3xl font-medium mb-2">Least common</h5>
+              <p class="text-base text-4xl sm:text-5xl" id="rarest">
+                
               </p>
-              <a class="hover:text-txt hover:underline" href="./demand">
-                <button type="button" class="bg-btn inline-block px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase rounded shadow-md">See Demand</button>
-              </a>
+              <span class="sm:block hidden">
+                <a class="hover:text-txt hover:underline" href="./demand">
+                  <button type="button" class="button">See Demand</button>
+                </a>
+              </span>
             </div>
           </div>
         </div>
-
-      <div class="flex justify-center hidden">
-        <div class="block rounded-lg shadow-lg bg-accent sm:w-1/2 sm:mx-0 mx-10 w-full text-center mt-10 py-10">
-          <div class="p-6">
-            <h5 class="text-txt text-2xl font-medium mb-2">Rarest</h5>
-            <p class="text-base mb-4 text-5xl">
-              🦤
-            </p>
-            <a class="hover:text-txt hover:underline" href="./demand">
-              <button type="button" class="bg-btn inline-block px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase rounded shadow-md">See Demand</button>
-            </a>
+  
+        <div class="flex justify-center w-2/5">
+            <div class="block rounded-lg shadow-lg bg-accent w-full text-center sm:py-10 py-0">
+              <div class="px-6 py-2">
+                <h5 class="text-txt text-3xl font-medium mb-2">Most Traded</h5>
+                <p class="text-base text-4xl sm:text-5xl" id="popular">
+                  
+                </p>
+                <span class="sm:block hidden">
+                  <a class="hover:text-txt hover:underline" href="./demand">
+                    <button type="button" class="button">See Demand</button>
+                  </a>
+                </span>
+                
+              </div>
+            </div>
           </div>
-        </div>
+  
+          <div class="flex justify-center w-2/5">
+            <div class="block rounded-lg shadow-lg bg-accent w-full text-center sm:py-10 py-0">
+              <div class="px-6 py-2">
+                <h5 class="text-txt text-3xl font-medium mb-2">Least Traded</h5>
+                <p class="text-base text-4xl sm:text-5xl" id="unpop">
+                  
+                </p>
+                <span class="sm:block hidden">
+                  <a class="hover:text-txt hover:underline" href="./demand">
+                    <button type="button" class="button">See Demand</button>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="flex justify-center w-2/5">
+            <div class="block rounded-lg shadow-lg bg-accent w-full text-center sm:py-10 py-0">
+              <div class="px-6 py-2">
+                <h5 class="text-txt text-3xl font-medium mb-2">Most Common</h5>
+                <p class="text-base text-4xl sm:text-5xl" id="common">
+                  
+                </p>
+                <span class="sm:block hidden">
+                  <a class="hover:text-txt hover:underline" href="./demand">
+                    <button type="button" class="button">See Demand</button>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
       </div>
+
+      
+
+
     </main>
 
-    <footer class="fixed inset-x-0 bottom-0">
-      <h1 class="text-center sm:w-full sm:mx-0 mx-10">
-        Not Affiliated with EmojiSwap - Created by thalen with help from owcs, leaf, and hauntyy <br>Version 0.5
+    <footer class="h-10 mt-10">
+      <h1 class="text-center mt-10 mb-4 sm:w-full sm:mx-0 mx-10 mt-2">
+        Not Affiliated with EmojiSwap - Created by Thalen and Cheesy Brik with help from owcs, leaf, and hauntyy <br>Notice any bugs? Dm floober#5201
       </h1>
     </footer>
 
 </body>
+<script src="home.js"></script>
 </html>

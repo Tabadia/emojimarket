@@ -1,5 +1,7 @@
 var trophy = document.getElementsByClassName("trophy");
 
+search();
+
 function search(){
     var count = 0;
     input = document.getElementById('input').value;

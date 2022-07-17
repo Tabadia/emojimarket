@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EmojiMarket</title>
+    <title>EmojiMarket - Trophies</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" type="image/png" href="../img/slot-machine.png"/>
+    <link rel="icon" type="image/png" href="../img/emojimarket.png"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E2KCHD451"></script>
     <script>
@@ -22,29 +22,30 @@
     <header class="text-txt body-font border-b-2">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-txt mb-4 md:mb-0">
-              <a href="../">
-                <span class="ml-3 text-xl"><img src="../img/slot-machine.png" class="w-5 float-left pt-1">EmojiMarket</span>
+              <a href="../" class="hover:text-txt hover:underline">
+                <span class="ml-3 text-xl"><img src="../img/emojimarketnobg.png" class="w-5 float-left pt-1">EmojiMarket</span>
               </a>
             </a>
             <nav class="md:ml-auto flex text-base justify-center">
-              <a class="mr-5 hover:text-txt hover:underline" href="../demand">📈Demand</a>
-              <a class="mr-5 hover:text-txt hover:underline" href="../database">📚Database</a>
-              <a class="hover:text-txt hover:underline" href="../trophy">🏆Trophies</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="../demand">📈Demand</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="../database">📚Database</a>
+              <a class="sm:mr-5 mr-4 hover:text-txt hover:underline sm:text-base text-sm" href="../lookup">👀Lookup</a>
+              <a class="hover:text-txt hover:underline sm:text-base text-sm" href="../trophy">🏆Trophies</a>
             </nav>
         </div>
     </header>
   </nav>
     
     <main>
-      <h1 class="text-center text-4xl mt-10 mb-4">Trophies 🏆</h1>
+      <h1 class="text-center text-4xl mt-8 mb-4">Trophies 🏆</h1>
 
       <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
           <div class="input-group relative flex flex-wrap items-stretch w-full">
-            <input type="search" oninput="search()" id="input" class="form-control relative flex-auto min-w-0 block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+            <input type="search" oninput="search()" id="input" class="form-control relative flex-auto min-w-0 block w-1/2 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search a trophy..." aria-label="Search" aria-describedby="button-addon2">
           </div>
           <div class="text-center">
-            Results: <span id="result">146</span>
+            Results: <span id="result">...</span>
           </div>
           
         </div>
@@ -765,7 +766,7 @@
 
     <footer class="h-10 mt-10">
       <h1 class="text-center mt-10 mb-4 sm:w-full sm:mx-0 mx-10 mt-2">
-        Not Affiliated with EmojiSwap - Created by thalen with help from owcs, leaf, and hauntyy <br>Version 0.5
+        Not Affiliated with EmojiSwap - Created by Thalen and Cheesy Brik with help from owcs, leaf, and hauntyy <br>Notice any bugs? Dm floober#5201
       </h1>
     </footer>
 

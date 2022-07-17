@@ -82,6 +82,8 @@ module.exports = {
       'txt': '#ffffff',
       'accent': '#4B3458',
       'btn': '#d74270',
+      'btn-pressed': '#c85176',
+      'btn-hover': '#ea2f69',
       'common': '#DDDDDD',
       'uncommon': '#00CC00',
       'rare': '#2087FF',
