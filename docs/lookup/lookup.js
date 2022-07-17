@@ -74,10 +74,15 @@ function search() {
         document.getElementById("current").innerHTML = "";
         document.getElementById("collection").innerHTML = "";
         for (let [key, value] of Object.entries(d)) {
-            if(value['rough users'].includes(input) && count < 5){
-                document.getElementById("current").innerHTML += key;
-                count++;
-                console.log(count)
+            if(value['rough users'].includes(input)){
+                if (count < 5){
+                    document.getElementById("current").innerHTML += key;
+                    count++;
+                    console.log(count)
+                }
+                else {
+                    count++;
+                }
             }
             if(value['associated users'].includes(input)){
                 document.getElementById("collection").innerHTML += key;
