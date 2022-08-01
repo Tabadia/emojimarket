@@ -56,8 +56,6 @@ function removeSpaces(string) {
     return string.split(' ').join('');
    }
 function search() {
-    let LheldRank = 1;
-    let MtradedRank = 615;
     input = document.getElementById('input').value.replaceAll(" ", "")
     document.getElementById('input').value = document.getElementById('input').value.replaceAll(" ", "")
     grapheme = splitter.splitGraphemes(input)[splitter.splitGraphemes(input).length-1]
@@ -97,6 +95,8 @@ function search() {
         document.getElementById('rarity').innerHTML = "Emoji not found"
     }
     function run(d) {
+        let LheldRank = 1;
+        let MtradedRank = 1;
         for (let [key, value] of Object.entries(d)) {
             if (key == input){
                 var t = value.traded;
@@ -142,8 +142,6 @@ function search() {
 }
 
 function search1() {
-    let LheldRank = 1;
-    let MtradedRank = 1;
     input1 = document.getElementById('input1').value.replaceAll(" ", "")
     document.getElementById('input1').value = document.getElementById('input1').value.replaceAll(" ", "")
     grapheme = splitter.splitGraphemes(input1)[splitter.splitGraphemes(input1).length-1]
@@ -183,6 +181,8 @@ function search1() {
         document.getElementById('rarity1').innerHTML = "Emoji not found"
     }
     function run(d) {
+        let LheldRank = 1;
+        let MtradedRank = 1;
         for (let [key, value] of Object.entries(d)) {
             if (key == input1){
                 var t = value.traded;
@@ -214,8 +214,6 @@ function search1() {
 function search2() {
     let rarity1 = 5
     let rarity2 = 5
-    let LheldRank = 1;
-    let MtradedRank = 615;
     input2 = document.getElementById('input2').value.replaceAll(" ", "")
     document.getElementById('input2').value = document.getElementById('input2').value.replaceAll(" ", "")
     grapheme = splitter.splitGraphemes(input2)[splitter.splitGraphemes(input2).length-1]
@@ -260,6 +258,8 @@ function search2() {
         document.getElementById('rarity2').innerHTML = "Emoji not found"
     }
     function run(d) {
+        let LheldRank = 1;
+        let MtradedRank = 1;
         score1 = 0;
         score2 = 0;
         for (let [key, value] of Object.entries(d)) {
