@@ -119,8 +119,8 @@ function search() {
                 LheldRank += 1;
                 
             }
-            if (t > value.traded) {
-                MtradedRank -= 1; 
+            if (t < value.traded) {
+                MtradedRank += 1; 
             }
         }
         document.getElementById('LheldRank').innerHTML = "#" + LheldRank;
@@ -143,7 +143,7 @@ function search() {
 
 function search1() {
     let LheldRank = 1;
-    let MtradedRank = 615;
+    let MtradedRank = 1;
     input1 = document.getElementById('input1').value.replaceAll(" ", "")
     document.getElementById('input1').value = document.getElementById('input1').value.replaceAll(" ", "")
     grapheme = splitter.splitGraphemes(input1)[splitter.splitGraphemes(input1).length-1]
@@ -198,8 +198,8 @@ function search1() {
             if (a > value["rough users"].length) {
                 LheldRank += 1;
             }
-            if (t > value.traded) {
-                MtradedRank -= 1; 
+            if (t < value.traded) {
+                MtradedRank += 1; 
             }
         }
         document.getElementById('LheldRank1').innerHTML = "#" + LheldRank;
@@ -278,8 +278,8 @@ function search2() {
             if (a > value["rough users"].length) {
                 LheldRank += 1;
             }
-            if (t > value.traded) {
-                MtradedRank -= 1; 
+            if (t < value.traded) {
+                MtradedRank += 1; 
             }
         }
         document.getElementById('LheldRank2').innerHTML = "#" + LheldRank;
