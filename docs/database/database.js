@@ -125,13 +125,16 @@ function search() {
         }
         document.getElementById('LheldRank').innerHTML = "#" + LheldRank;
         document.getElementById('MtradedRank').innerHTML = "#" + MtradedRank;
-        let uniqueChars = users.filter((element, index) => {
-            return users.indexOf(element) === index;
+        const count = {};
+
+        users.forEach(element => {
+        count[element] = (count[element] || 0) + 1;
         });
-        users = uniqueChars
-        users = users.toString()
-        users = users.replaceAll(",", ", ");
-        users = users.replaceAll("@", "");
+        console.log(count)
+        users = JSON.stringify(count);
+        users = users.replaceAll("\"", "");
+        users = users.replaceAll(":1", "").replaceAll(":2", " (2)").replaceAll(":3", " (3)").replaceAll(":4", " (4)").replaceAll(":5", " (5)").replaceAll(":6", " (6)").replaceAll(":7", " (7)").replaceAll(":8", " (8)").replaceAll(":9", " (9)").replaceAll(":10", " (10)");
+        users = users.replaceAll(",", ", ").replaceAll("{", "").replaceAll("}", "").replaceAll("@", "");
 
         document.getElementById('users').innerHTML = users;
         
