@@ -25,6 +25,66 @@ function loadJSON(path, success, error)
     
 }
 
+function clear(){
+    document.getElementById('rarity1').classList.remove('text-green-500');
+    document.getElementById('rarity1').classList.remove('text-red-500');
+    document.getElementById('rarity1').classList.remove('text-black');
+    document.getElementById('rarity2').classList.remove('text-green-500');
+    document.getElementById('rarity2').classList.remove('text-red-500');
+    document.getElementById('rarity2').classList.remove('text-black');
+    document.getElementById('traded1').classList.remove('text-green-500');
+    document.getElementById('traded1').classList.remove('text-red-500');
+    document.getElementById('traded1').classList.remove('text-black');
+    document.getElementById('traded2').classList.remove('text-green-500');
+    document.getElementById('traded2').classList.remove('text-red-500');
+    document.getElementById('traded2').classList.remove('text-black');
+    document.getElementById('rolled1').classList.remove('text-green-500');
+    document.getElementById('rolled1').classList.remove('text-red-500');
+    document.getElementById('rolled1').classList.remove('text-black');
+    document.getElementById('rolled2').classList.remove('text-green-500');
+    document.getElementById('rolled2').classList.remove('text-red-500');
+    document.getElementById('rolled2').classList.remove('text-black');
+    document.getElementById('discard1').classList.remove('text-green-500');
+    document.getElementById('discard1').classList.remove('text-red-500');
+    document.getElementById('discard1').classList.remove('text-black');
+    document.getElementById('discard2').classList.remove('text-green-500');
+    document.getElementById('discard2').classList.remove('text-red-500');
+    document.getElementById('discard2').classList.remove('text-black');
+    document.getElementById('held1').classList.remove('text-green-500');
+    document.getElementById('held1').classList.remove('text-red-500');
+    document.getElementById('held1').classList.remove('text-black');
+    document.getElementById('held2').classList.remove('text-green-500');
+    document.getElementById('held2').classList.remove('text-red-500');
+    document.getElementById('held2').classList.remove('text-black');
+    document.getElementById('LheldRank1').classList.remove('text-green-500');
+    document.getElementById('LheldRank1').classList.remove('text-red-500');
+    document.getElementById('LheldRank1').classList.remove('text-black');
+    document.getElementById('LheldRank2').classList.remove('text-green-500');
+    document.getElementById('LheldRank2').classList.remove('text-red-500');
+    document.getElementById('LheldRank2').classList.remove('text-black');
+    document.getElementById('MtradedRank1').classList.remove('text-green-500');
+    document.getElementById('MtradedRank1').classList.remove('text-red-500');
+    document.getElementById('MtradedRank1').classList.remove('text-black');
+    document.getElementById('MtradedRank2').classList.remove('text-green-500');
+    document.getElementById('MtradedRank2').classList.remove('text-red-500');
+    document.getElementById('MtradedRank2').classList.remove('text-black');
+
+    document.getElementById('rarity1').innerHTML = '???'
+    document.getElementById('rarity2').innerHTML = '???'
+    document.getElementById('traded1').innerHTML = '???'
+    document.getElementById('traded2').innerHTML = '???'
+    document.getElementById('rolled1').innerHTML = '???'
+    document.getElementById('rolled2').innerHTML = '???'
+    document.getElementById('discard1').innerHTML = '???'
+    document.getElementById('discard2').innerHTML = '???'
+    document.getElementById('held1').innerHTML = '???'
+    document.getElementById('held2').innerHTML = '???'
+    document.getElementById('LheldRank1').innerHTML = '???'
+    document.getElementById('LheldRank2').innerHTML = '???'
+    document.getElementById('MtradedRank1').innerHTML = '???'
+    document.getElementById('MtradedRank2').innerHTML = '???'
+}
+
 loadJSON('https://emojimarket.s3.us-west-2.amazonaws.com/emoji_database.json', function(data) { load(data)}, function(xhr) { console.error(xhr); });
 
 function load(d) {
@@ -117,10 +177,19 @@ function search() {
         for (let value of Object.values(d)) {
             if (a > value["rough users"].length) {
                 LheldRank += 1;
-                
+            }
+            else if (a == value["rough users"].length) {
+                if (t > value.traded) {
+                    LheldRank += 1;
+                }
             }
             if (t < value.traded) {
                 MtradedRank += 1; 
+            }
+            else if (t == value.traded) {
+                if (a < value["rough users"]) {
+                    MtradedRank += 1;
+                }
             }
         }
         document.getElementById('LheldRank').innerHTML = "#" + LheldRank;
@@ -145,6 +214,7 @@ function search() {
 }
 
 function search1() {
+    clear();
     input1 = document.getElementById('input1').value.replaceAll(" ", "")
     document.getElementById('input1').value = document.getElementById('input1').value.replaceAll(" ", "")
     grapheme = splitter.splitGraphemes(input1)[splitter.splitGraphemes(input1).length-1]
@@ -201,8 +271,18 @@ function search1() {
             if (a > value["rough users"].length) {
                 LheldRank += 1;
             }
+            else if (a == value["rough users"].length) {
+                if (t > value.traded) {
+                    LheldRank += 1;
+                }
+            }
             if (t < value.traded) {
                 MtradedRank += 1; 
+            }
+            else if (t == value.traded) {
+                if (a < value["rough users"]) {
+                    MtradedRank += 1;
+                }
             }
         }
         document.getElementById('LheldRank1').innerHTML = "#" + LheldRank;
@@ -281,8 +361,18 @@ function search2() {
             if (a > value["rough users"].length) {
                 LheldRank += 1;
             }
+            else if (a == value["rough users"].length) {
+                if (t > value.traded) {
+                    LheldRank += 1;
+                }
+            }
             if (t < value.traded) {
                 MtradedRank += 1; 
+            }
+            else if (t == value.traded) {
+                if (a < value["rough users"]) {
+                    MtradedRank += 1;
+                }
             }
         }
         document.getElementById('LheldRank2').innerHTML = "#" + LheldRank;
@@ -305,75 +395,121 @@ function search2() {
         }
 
         if(rarity1 < rarity2) {
-            document.getElementById('rarity1').style.color = "green";
-            document.getElementById('rarity2').style.color = "red";
+            document.getElementById('rarity1').classList.add("text-green-500");
+            document.getElementById('rarity2').classList.add("text-red-500");
             score1++;
         }
         else if(rarity1 > rarity2) {
-            document.getElementById('rarity1').style.color = "red";
-            document.getElementById('rarity2').style.color = "green";
+            document.getElementById('rarity1').classList.add("text-red-500");
+            document.getElementById('rarity2').classList.add("text-green-500");
+            score2++;
+        }
+        else if (rarity1 == rarity2) {
+            document.getElementById('rarity1').classList.add("text-black");
+            document.getElementById('rarity2').classList.add("text-black");
+            score1++;
             score2++;
         }
             
 
         if (parseInt(document.getElementById('traded1').innerHTML) > parseInt(document.getElementById('traded2').innerHTML)){
-            document.getElementById('traded1').style.color = "green";
-            document.getElementById('traded2').style.color = "red";
+            document.getElementById('traded1').classList.add("text-green-500");
+            document.getElementById('traded2').classList.add("text-red-500");
             score1++;
         }
         else if (parseInt(document.getElementById('traded1').innerHTML) < parseInt(document.getElementById('traded2').innerHTML)){
-            document.getElementById('traded1').style.color = "red";
-            document.getElementById('traded2').style.color = "green";
+            document.getElementById('traded1').classList.add("text-red-500");
+            document.getElementById('traded2').classList.add("text-green-500");
             score2++;
         }
+        else if (parseInt(document.getElementById('traded1').innerHTML) == parseInt(document.getElementById('traded2').innerHTML)){
+            document.getElementById('traded1').classList.add("text-black");
+            document.getElementById('traded2').classList.add("text-black");
+            score1++;
+            score2++;
+        }
+
         if (parseInt(document.getElementById('rolled1').innerHTML) < parseInt(document.getElementById('rolled2').innerHTML)){
-            document.getElementById('rolled1').style.color = "green";
-            document.getElementById('rolled2').style.color = "red";
+            document.getElementById('rolled1').classList.add("text-green-500");
+            document.getElementById('rolled2').classList.add("text-red-500");
             score1++;
         }
         else if (parseInt(document.getElementById('rolled1').innerHTML) > parseInt(document.getElementById('rolled2').innerHTML)){
-            document.getElementById('rolled1').style.color = "red";
-            document.getElementById('rolled2').style.color = "green";
+            document.getElementById('rolled1').classList.add("text-red-500");
+            document.getElementById('rolled2').classList.add("text-green-500");
+            score2++;
+        }
+        else if (parseInt(document.getElementById('rolled1').innerHTML) == parseInt(document.getElementById('rolled2').innerHTML)){
+            document.getElementById('rolled1').classList.add("text-black");
+            document.getElementById('rolled2').classList.add("text-black");
+            score1++;
             score2++;
         }
         if (parseInt(document.getElementById('discard1').innerHTML) < parseInt(document.getElementById('discard2').innerHTML)){
-            document.getElementById('discard1').style.color = "green";
-            document.getElementById('discard2').style.color = "red";
+            document.getElementById('discard1').classList.add("text-green-500");
+            document.getElementById('discard2').classList.add("text-red-500");
             score1++;
         }
         else if (parseInt(document.getElementById('discard1').innerHTML) > parseInt(document.getElementById('discard2').innerHTML)){
-            document.getElementById('discard1').style.color = "red";
-            document.getElementById('discard2').style.color = "green";
+            document.getElementById('discard1').classList.add("text-red-500");
+            document.getElementById('discard2').classList.add("text-green-500");
             score2++;
         }
+        else if (parseInt(document.getElementById('discard1').innerHTML) == parseInt(document.getElementById('discard2').innerHTML)){
+            document.getElementById('discard1').classList.add("text-black");
+            document.getElementById('discard2').classList.add("text-black");
+            score1++;
+            score2++;
+        }
+
         if (parseInt(document.getElementById('held1').innerHTML) > parseInt(document.getElementById('held2').innerHTML)){
-            document.getElementById('held1').style.color = "red";
-            document.getElementById('held2').style.color = "green";
+            document.getElementById('held1').classList.add("text-red-500");
+            document.getElementById('held2').classList.add("text-green-500");
             score2++;
         }
         else if (parseInt(document.getElementById('held1').innerHTML) < parseInt(document.getElementById('held2').innerHTML)){
-            document.getElementById('held1').style.color = "green";
-            document.getElementById('held2').style.color = "red";
+            document.getElementById('held1').classList.add("text-green-500");
+            document.getElementById('held2').classList.add("text-red-500");
             score1++;
         }
+        else if (parseInt(document.getElementById('held1').innerHTML) == parseInt(document.getElementById('held2').innerHTML)){
+            document.getElementById('held1').classList.add("text-black");
+            document.getElementById('held2').classList.add("text-black");
+            score1++;
+            score2++;
+        }
+
         if (parseInt(document.getElementById('MtradedRank1').innerHTML.replace('#','')) < parseInt(document.getElementById('MtradedRank2').innerHTML.replace('#',''))){
-            document.getElementById('MtradedRank1').style.color = "green";
-            document.getElementById('MtradedRank2').style.color = "red";
+            document.getElementById('MtradedRank1').classList.add("text-green-500");
+            document.getElementById('MtradedRank2').classList.add("text-red-500");
             score1++;
         }
         else if (parseInt(document.getElementById('MtradedRank1').innerHTML.replace('#','')) > parseInt(document.getElementById('MtradedRank2').innerHTML.replace('#',''))){
-            document.getElementById('MtradedRank1').style.color = "red";
-            document.getElementById('MtradedRank2').style.color = "green";
+            document.getElementById('MtradedRank1').classList.add("text-red-500");
+            document.getElementById('MtradedRank2').classList.add("text-green-500");
             score2++;
         }
+        else if (parseInt(document.getElementById('MtradedRank1').innerHTML.replace('#','')) == parseInt(document.getElementById('MtradedRank2').innerHTML.replace('#',''))){
+            document.getElementById('MtradedRank1').classList.add("text-black");
+            document.getElementById('MtradedRank2').classList.add("text-black");
+            score1++;
+            score2++;
+        }
+
         if (parseInt(document.getElementById('LheldRank1').innerHTML.replace('#','')) < parseInt(document.getElementById('LheldRank2').innerHTML.replace('#',''))){
-            document.getElementById('LheldRank1').style.color = "green";
-            document.getElementById('LheldRank2').style.color = "red";
+            document.getElementById('LheldRank1').classList.add("text-green-500");
+            document.getElementById('LheldRank2').classList.add("text-red-500");
             score1++;
         }
         else if (parseInt(document.getElementById('LheldRank1').innerHTML.replace('#','')) > parseInt(document.getElementById('LheldRank2').innerHTML.replace('#',''))){
-            document.getElementById('LheldRank1').style.color = "red";
-            document.getElementById('LheldRank2').style.color = "green";
+            document.getElementById('LheldRank1').classList.add("text-red-500");
+            document.getElementById('LheldRank2').classList.add("text-green-500");
+            score2++;
+        }
+        else if (parseInt(document.getElementById('LheldRank1').innerHTML.replace('#','')) == parseInt(document.getElementById('LheldRank2').innerHTML.replace('#',''))){
+            document.getElementById('LheldRank1').classList.add("text-black");
+            document.getElementById('LheldRank2').classList.add("text-black");
+            score1++;
             score2++;
         }
         document.getElementById('score1').innerHTML = score1 + "/7";

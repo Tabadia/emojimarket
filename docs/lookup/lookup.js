@@ -50,6 +50,18 @@ function load(d){
             }
             
         }
+        /*let tradeTime = 0;
+        let tradeEmoji = "none";
+        for (let [key, value] of Object.entries(d)) {
+            let index = value['rough users'].indexOf(input);
+            if (index > -1){
+                temp = value['trade times'][index];
+                if (temp > tradeTime) {
+                    tradeTime = temp;
+                    tradeEmoji = key;
+                }
+            }
+        }*/
         
     }
     loadJSON('https://emojimarket.s3.us-west-2.amazonaws.com/emoji_database.json', function(data) { run(data)}, function(xhr) { console.error(xhr); });
@@ -99,6 +111,27 @@ function search() {
             }
             
         }
+        /*let tradeTime = 0;
+        let tradeEmoji = "none";
+        input = "@" + input.replaceAll("@", "");
+        console.log(input)
+        for (let [key, value] of Object.entries(d)) {
+            let index = value['rough users'].indexOf(input);
+            if (index > -1){
+                temp = value['trade times'][index];
+                tradeTime = temp
+                tradeTime = new Date(tradeTime * 1000);
+                tradeTime = tradeTime.toLocaleString('en-US', {hour12: false});
+                console.log(tradeTime + key)
+                if (temp > tradeTime && document.getElementById("current").innerHTML.includes(key)) {
+                    tradeTime = temp;
+                    tradeEmoji = key;
+                }
+            }
+        }
+        
+        document.getElementById("tradeEmoji").innerHTML = tradeEmoji;
+        document.getElementById("tradeTime").innerHTML = tradeTime;*/
         
     }
     loadJSON('https://emojimarket.s3.us-west-2.amazonaws.com/emoji_database.json', function(data) { run(data)}, function(xhr) { console.error(xhr); });
